@@ -4,16 +4,18 @@
 <meta charset="UTF-8">
 <title>Приглашение</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
 }
 
 body{
+font-family:'Montserrat',sans-serif;
 color:white;
 overflow-x:hidden;
 }
@@ -26,16 +28,17 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
+padding:20px;
 }
 
 .hero h1{
-font-size:70px;
-animation:fade 2s;
+font-family:'Great Vibes',cursive;
+font-size:80px;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:26px;
-margin-top:10px;
 }
 
 .timer{
@@ -53,7 +56,8 @@ background:#111;
 }
 
 .program h2{
-font-size:40px;
+font-family:'Great Vibes',cursive;
+font-size:50px;
 margin-bottom:30px;
 }
 
@@ -68,7 +72,8 @@ color:black;
 }
 
 .gallery h2{
-font-size:40px;
+font-family:'Great Vibes',cursive;
+font-size:50px;
 margin-bottom:40px;
 }
 
@@ -94,13 +99,9 @@ transform:scale(1.05);
 background:#111;
 }
 
-button{
-padding:15px 35px;
-font-size:20px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-margin-top:30px;
+.map h2{
+font-family:'Great Vibes',cursive;
+font-size:50px;
 }
 
 iframe{
@@ -108,16 +109,15 @@ margin-top:30px;
 border-radius:15px;
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(40px)}
-to{opacity:1;transform:translateY(0)}
-}
-
 </style>
 
 </head>
 
 <body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9c7c8c0a8c.mp3" type="audio/mpeg">
+</audio>
 
 <section class="hero">
 
@@ -128,12 +128,6 @@ to{opacity:1;transform:translateY(0)}
 <p>20 апреля • 18:00</p>
 
 <div class="timer" id="timer"></div>
-
-<button onclick="document.getElementById('music').play()">Музыка</button>
-
-<audio id="music">
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9c7c8c0a8c.mp3">
-</audio>
 
 </section>
 
@@ -146,8 +140,6 @@ to{opacity:1;transform:translateY(0)}
 <p>19:00 ужин</p>
 <p>20:00 музыка и танцы</p>
 
-<button onclick="alert('Жду тебя на празднике')">Я приду</button>
-
 </section>
 
 
@@ -158,11 +150,8 @@ to{opacity:1;transform:translateY(0)}
 <div class="grid">
 
 <img src="https://images.unsplash.com/photo-1505238680356-667803448bb6">
-
 <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3">
-
 <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-
 <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622">
 
 </div>
@@ -185,19 +174,18 @@ height="300">
 
 <script>
 
-let eventDate = new Date("Apr 20, 2026 18:00:00").getTime()
+let eventDate=new Date("Apr 20, 2026 18:00:00").getTime()
 
 setInterval(function(){
 
-let now = new Date().getTime()
+let now=new Date().getTime()
+let distance=eventDate-now
 
-let distance = eventDate - now
+let days=Math.floor(distance/(1000*60*60*24))
+let hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60))
+let minutes=Math.floor((distance%(1000*60*60))/(1000*60))
 
-let days = Math.floor(distance/(1000*60*60*24))
-let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60))
-let minutes = Math.floor((distance%(1000*60*60))/(1000*60))
-
-document.getElementById("timer").innerHTML =
+document.getElementById("timer").innerHTML=
 days+" дней "+hours+" часов "+minutes+" минут"
 
 },1000)
