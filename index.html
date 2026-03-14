@@ -1,196 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="kk">
 <head>
-<meta charset="UTF-8">
-<title>Приглашение</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туған күнге шақыру</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --white: #ffffff;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-<style>
+        /* Негізгі блок (Cover) */
+        .header-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1530103862676-fa8c9d3433b9?auto=format&fit=crop&w=1350&q=80'); /* Фондық сурет */
+            background-size: cover;
+            background-position: center;
+            animation: fadeIn 2s ease-in;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+            font-weight: 300;
+        }
 
-body{
-font-family:'Montserrat',sans-serif;
-color:white;
-overflow-x:hidden;
-}
+        .date-top {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
 
-.hero{
-height:100vh;
-background:url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30") center/cover;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
-}
+        /* Ақпарат блогы */
+        .info-section {
+            padding: 80px 20px;
+            background-color: var(--white);
+            color: var(--dark);
+        }
 
-.hero h1{
-font-family:'Great Vibes',cursive;
-font-size:80px;
-margin-bottom:20px;
-}
+        .info-section h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
 
-.hero p{
-font-size:26px;
-}
+        .details {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
 
-.timer{
-font-size:32px;
-margin-top:30px;
-}
+        /* Таймер стилі */
+        .timer {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-weight: bold;
+        }
 
-section{
-padding:100px 20px;
-text-align:center;
-}
+        /* Түйме (Картаға сілтеме) */
+        .btn-map {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 40px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-.program{
-background:#111;
-}
+        .btn-map:hover {
+            background-color: var(--gold);
+            color: white;
+        }
 
-.program h2{
-font-family:'Great Vibes',cursive;
-font-size:50px;
-margin-bottom:30px;
-}
+        /* Анимация */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.program p{
-font-size:22px;
-margin:10px;
-}
-
-.gallery{
-background:#fafafa;
-color:black;
-}
-
-.gallery h2{
-font-family:'Great Vibes',cursive;
-font-size:50px;
-margin-bottom:40px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-width:85%;
-margin:auto;
-}
-
-.grid img{
-width:100%;
-border-radius:15px;
-transition:0.4s;
-}
-
-.grid img:hover{
-transform:scale(1.05);
-}
-
-.map{
-background:#111;
-}
-
-.map h2{
-font-family:'Great Vibes',cursive;
-font-size:50px;
-}
-
-iframe{
-margin-top:30px;
-border-radius:15px;
-}
-
-</style>
-
+        @media (max-width: 480px) {
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<audio autoplay loop>
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9c7c8c0a8c.mp3" type="audio/mpeg">
-</audio>
+    <section class="header-section">
+        <div class="date-top">25.05.2026</div>
+        <h1>АЙЖАН</h1>
+        <p style="font-size: 1.5rem; font-style: italic;">30 жас мерейтой</p>
+    </section>
 
-<section class="hero">
+    <section class="info-section">
+        <h2>Құрметті қонақтар!</h2>
+        <div class="details">
+            <p>Сіздерді өмірімнің айтулы күні — туған күніме арналған салтанатты кешке шақырамын. Қуанышымның куәсі болып, бірге атап өтуге шақырамын!</p>
+            <hr style="width: 50px; border: 0.5px solid #c5a059; margin: 30px auto;">
+            <p><strong>УАҚЫТЫ:</strong> Сағат 18:00</p>
+            <p><strong>МЕКЕН-ЖАЙЫ:</strong> Алматы қаласы, "Алтын Сарай" мейрамханасы</p>
+            
+            <a href="https://2gis.kz" target="_blank" class="btn-map">Картаны ашу</a>
+        </div>
+    </section>
 
-<h1>Ты приглашен</h1>
-
-<p>День рождения Али</p>
-
-<p>20 апреля • 18:00</p>
-
-<div class="timer" id="timer"></div>
-
-</section>
-
-
-<section class="program">
-
-<h2>Программа вечера</h2>
-
-<p>18:00 встреча гостей</p>
-<p>19:00 ужин</p>
-<p>20:00 музыка и танцы</p>
-
-</section>
-
-
-<section class="gallery">
-
-<h2>Фото</h2>
-
-<div class="grid">
-
-<img src="https://images.unsplash.com/photo-1505238680356-667803448bb6">
-<img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3">
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-<img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622">
-
-</div>
-
-</section>
-
-
-<section class="map">
-
-<h2>Место встречи</h2>
-
-<iframe
-src="https://maps.google.com/maps?q=Almaty&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="600"
-height="300">
-</iframe>
-
-</section>
-
-
-<script>
-
-let eventDate=new Date("Apr 20, 2026 18:00:00").getTime()
-
-setInterval(function(){
-
-let now=new Date().getTime()
-let distance=eventDate-now
-
-let days=Math.floor(distance/(1000*60*60*24))
-let hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60))
-let minutes=Math.floor((distance%(1000*60*60))/(1000*60))
-
-document.getElementById("timer").innerHTML=
-days+" дней "+hours+" часов "+minutes+" минут"
-
-},1000)
-
-</script>
+    <footer style="padding: 40px; background: #f9f9f9; color: #888; font-size: 0.8rem;">
+        <p>Сізді асыға күтеміз!</p>
+    </footer>
 
 </body>
 </html>
